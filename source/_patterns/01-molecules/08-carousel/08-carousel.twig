@@ -1,0 +1,34 @@
+{%
+  set slides = [
+    {
+      'src': 'https://dummyimage.com/600x400/000/fff',
+      'title': 'Title of slide 1',
+      'description': 'This is description',
+    },
+    {
+      'src': 'https://dummyimage.com/600x400/000/fff',
+      'title': 'Title of slide 2',
+      'description': 'This is description',
+    }
+  ]
+%}
+
+
+<div class="carousel">
+  {% for slide in slides %}
+  <div class="carousel__slide">
+    <div class="carousel__slide__image"><img src="{{ slide.src }}"/></div>
+    <div class="carousel__slide__infomation">
+      <h1>{{ slide.title }}</h1>
+      <div class="carousel__slide__description">
+        {{ slide.description }}
+      </div>
+      <div class="carousel__slide__links">
+        {% for i in 0..2 %}
+          <a class="btn btn-default" href="#" role="button">Read more</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
